@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { useStore, CartItem } from "@/store/useStore";
+import { CartFeatureMarquee } from "@/components/cart/CartFeatureMarquee";
 import { 
   Trash2, 
   Minus, 
@@ -203,36 +204,7 @@ export default function CartPage() {
                   </div>
                 ))}
 
-                {/* Additional Perks Info Card */}
-                <div className="bg-gradient-to-r from-zinc-50 to-zinc-100/50 dark:from-zinc-900/20 dark:to-zinc-900/10 border border-zinc-200/50 dark:border-zinc-800/80 rounded-2xl p-5 grid grid-cols-1 md:grid-cols-3 gap-4 text-xs font-bold">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-[#FF5A00]/10 flex items-center justify-center text-[#FF5A00]">
-                      <Wrench className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <h4 className="text-zinc-800 dark:text-zinc-200">Professional Fitting</h4>
-                      <p className="text-[10px] text-zinc-500 dark:text-zinc-450 font-normal">Expert balancing & alignment</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-500">
-                      <Truck className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <h4 className="text-zinc-800 dark:text-zinc-200">Free Safe Delivery</h4>
-                      <p className="text-[10px] text-zinc-500 dark:text-zinc-450 font-normal">Shipped to local fitting garage</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-500">
-                      <ShieldCheck className="w-4 h-4" />
-                    </div>
-                    <div>
-                      <h4 className="text-zinc-800 dark:text-zinc-200">Tread X Warranty</h4>
-                      <p className="text-[10px] text-zinc-500 dark:text-zinc-450 font-normal">Full mileage & road damage protection</p>
-                    </div>
-                  </div>
-                </div>
+                <CartFeatureMarquee />
               </div>
 
               {/* Order Summary & Coupon Column */}

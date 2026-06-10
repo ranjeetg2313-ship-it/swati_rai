@@ -27,6 +27,7 @@ import {
   Filter,
   Percent
 } from "lucide-react";
+import { FeatureMarquee } from "@/components/home/FeatureMarquee";
 
 export default function WishlistPage() {
   const [mounted, setMounted] = useState(false);
@@ -280,7 +281,7 @@ export default function WishlistPage() {
       <main className="flex-1">
 
         {/* ─── Hero Banner ─── */}
-        <section className="relative bg-[#0B0F14] overflow-hidden">
+        <section className="relative bg-[#0B0F14]/95 bg-[url('/images/mountain_road_1781107638083.png')] bg-cover bg-center bg-blend-overlay overflow-hidden border-b border-zinc-800/50">
           {/* Orange glow */}
           <div className="absolute -top-20 -right-20 w-[500px] h-[500px] bg-[#FF5A00]/10 blur-[120px] rounded-full pointer-events-none" />
           <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-[#FF5A00]/5 blur-[80px] rounded-full pointer-events-none" />
@@ -289,13 +290,13 @@ export default function WishlistPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 items-center gap-8">
               {/* Left */}
               <div>
-                <span className="inline-flex items-center gap-1.5 text-[#FF5A00] font-bold text-[10px] tracking-widest uppercase mb-3">
-                  <Heart className="w-3 h-3 fill-current" /> Your Saved Tyres
+                <span className="inline-flex items-center gap-1.5 text-[#FF5A00] font-bold text-xs md:text-sm tracking-widest uppercase mb-4">
+                  <Heart className="w-4 h-4 fill-current" /> Your Saved Tyres
                 </span>
-                <h1 className="text-4xl md:text-5xl font-black text-white leading-tight mb-3 tracking-tight">
+                <h1 className="text-6xl md:text-7xl lg:text-8xl font-black text-white leading-tight mb-5 tracking-tight">
                   My <span className="text-[#FF5A00]">Wishlist</span>
                 </h1>
-                <p className="text-zinc-400 text-sm mb-6 leading-relaxed">
+                <p className="text-zinc-400 text-base md:text-lg mb-8 leading-relaxed max-w-lg">
                   {savedCount > 0
                     ? <><span className="text-white font-bold">{savedCount} premium tyre{savedCount !== 1 ? "s" : ""}</span> saved · Save up to <span className="text-[#FF5A00] font-bold">₹{totalSavings.toLocaleString()}</span> on MRP</>
                     : "Save your favourite tyres and compare them side by side."
@@ -687,31 +688,6 @@ export default function WishlistPage() {
           )}
         </div>
 
-        {/* ─── Trust Bar ─── */}
-        <section className="bg-white dark:bg-[#161B22] border-t border-zinc-100 dark:border-zinc-800 py-6 mt-6">
-          <div className="container mx-auto px-4 max-w-7xl">
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-4 text-center">
-              {[
-                { icon: <Truck className="w-4 h-4" />, title: "Free Delivery", sub: "On all orders" },
-                { icon: <Wrench className="w-4 h-4" />, title: "Installation", sub: "2500+ centres" },
-                { icon: <TrendingDown className="w-4 h-4" />, title: "Easy Returns", sub: "7 days policy" },
-                { icon: <ShieldCheck className="w-4 h-4" />, title: "Secure Pay", sub: "100% safe" },
-                { icon: <Tag className="w-4 h-4" />, title: "Best Price", sub: "Guaranteed" },
-              ].map((item, i) => (
-                <div key={i} className={`flex flex-col items-center gap-2 ${i === 3 || i === 4 ? "col-span-1" : ""}`}>
-                  <div className="w-8 h-8 bg-[#FF5A00]/10 text-[#FF5A00] rounded-xl flex items-center justify-center">
-                    {item.icon}
-                  </div>
-                  <div>
-                    <div className="text-[10px] font-black uppercase tracking-wider text-zinc-700 dark:text-zinc-300">{item.title}</div>
-                    <div className="text-[9px] text-zinc-400 mt-0.5">{item.sub}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
       </main>
 
       {/* ─── Mobile Filter Drawer ─── */}
@@ -839,6 +815,7 @@ export default function WishlistPage() {
         </div>
       )}
 
+      <FeatureMarquee />
       <Footer />
     </div>
   );

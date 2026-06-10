@@ -41,12 +41,12 @@ export function Header() {
     { name: "Brands", href: "#", icon: Award },
     { name: "Deals", href: "#", icon: Flame },
     { name: "About Us", href: "#", icon: Info },
-    { name: "Contact", href: "#", icon: PhoneCall },
+    { name: "Contact", href: "/contact", icon: PhoneCall },
   ];
 
   return (
     <>
-      <header className="bg-[#0B0F14] py-4 w-full relative z-50 border-b border-zinc-800/40">
+      <header className="bg-[#0B0F14] py-4 w-full sticky top-0 z-50 border-b border-zinc-800/40 shadow-xl">
         <div className="container mx-auto px-4 flex items-center justify-between">
           
           {/* Logo */}
